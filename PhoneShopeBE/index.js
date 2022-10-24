@@ -1,8 +1,8 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const ProductRoute = require("./routes/products")
-const bodyParser = require('body-parser')
-
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import routes from './routes/index.js';
+import mongoose from 'mongoose';
 const connection_string =
   "mongodb+srv://admin:1111@cluster0.i2eye5b.mongodb.net/test";
 
@@ -35,4 +35,4 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 
-app.use('', ProductRoute)
+routes(app);
