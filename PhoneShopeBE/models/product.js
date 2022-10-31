@@ -16,10 +16,17 @@ const productsSchema = new Schema(
       type: String,
       require: true,
     },
-
-    info: {
+    chip: {
       type: String,
-      require: false,
+      require: true,
+    },
+    ram: {
+      type: String,
+      require: true,
+    },
+    memory: {
+      type: String,
+      require: true,
     },
     price: {
       type: Number,
