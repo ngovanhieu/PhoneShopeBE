@@ -1,7 +1,6 @@
 import { Products } from "../models/index.js";
 
 const carControllers = {
-  // [Get]/phone
   index: async (req, res, next) => {
     try {
       const PAGE_SIZE = 12;
@@ -12,7 +11,7 @@ const carControllers = {
         const Product = await Products.find({}).skip(skip).limit(PAGE_SIZE);
         const totalProduct = await Products.find({})
         const total = Math.round( totalProduct.length / PAGE_SIZE )
-        res.status(200).json({Product, total});
+        res.status(200).json({Product, total, totalProduct});
       } else {
         const Product = await Products.find({});
         const total = Math.round( Product.length / PAGE_SIZE )
